@@ -26,4 +26,9 @@ export class ProductService {
     return this._http.get('/readall');
   }
 
+  readSome(product_name) {
+    console.log('>>>>>>>>>>>', product_name);
+    return this._http.post('/readSome/', {product_name: product_name} );
+  }
+
 }

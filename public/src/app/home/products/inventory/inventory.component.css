@@ -1,19 +1,28 @@
-*{
+/* *{
   outline: 2px dotted red;
-}
+} */
 .wrapper{
   width: 99%;
   height: 90%;
-  background-color: olivedrab;
-  border: 4px dotted rgb(199, 119, 14);
+  /* background-color: olivedrab; */
+  /* border: 4px dotted rgb(199, 119, 14); */
 }
 
 
 .search_wrapper{
   width: 99%;
-  height: 10%;
+  min-height: 10%;
   background-color: rgb(32, 63, 63);
-  border: 1px dotted purple;
+  /* border: 1px dotted purple; */
+  display: block;
+  padding-bottom: 10px;
+}
+.s{
+  display: block;
+  width: 100%;
+}
+ul{
+  display: block;
 }
 .wrapper input[type=text] {
   float: left;
@@ -26,18 +35,21 @@
   margin-right: 16px;
   margin-left: 10px;
   font-size: 17px;
+  display: block;
 }
+
 
 
 
 /* ==== products div ====== */
 div.product{
-  outline: 2px dotted rebeccapurple;
+  /* outline: 2px dotted rebeccapurple; */
   width: 96%;
   height: 150px;
   background-color: lightcyan;
   margin: 20px auto;
   padding: 10px;
+  /* margin-bottom: 10px; */
 }
 /* ===== product img div ====== */
   div.img_div{

@@ -10,6 +10,9 @@ module.exports = function (app) {
 
     // read all
     app.get('/readall', productController.readall);
+
+    //read One
+    app.post('/readSome', productController.readSome);
     
     // WILD CARD
     app.all("*", (req,res,next) => {

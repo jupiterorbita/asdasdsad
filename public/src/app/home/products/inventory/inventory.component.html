@@ -1,31 +1,68 @@
 <div class="wrapper">
-    <h3>Inventory Component</h3>
+  <!-- <h3>Inventory Component</h3> -->
 
-    <div class="search_wrapper">
-        <input type="text" placeholder="Search Component">
+  <div class="search_wrapper">
+    <input class='s' (keyup)="onKey($event)" type="text" placeholder="Search Component">
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="product" *ngFor="let prod of found">
+
+
+
+      <div class="img_div">
+        <img src="{{ prod.imgurl }}" alt="">
       </div>
+
+      <div class='product_name_desc'>
+        <span class="product_title"> <h3> {{ prod.name }} </h3></span>
+        <br>
+        <hr> {{ prod.description }}
+      </div>
+
+      <div class="price">
+        <span class='font_price'> $ {{ prod.price }}</span>
+        <br>
+        <button class='add_to_cart_btn' (click)="addToCart(prod)">ADD TO CART</button>
+
+
+
+        <!-- <ul *ngFor="let prod of found"> -->
+        <!-- name: {{ prod.name }}<br>
+              price: {{ prod.price }}<br> -->
+        <!-- <button class='add_to_cart_btn' (click)="addToCart(prod)">ADD TO CART</button> -->
+        <!-- </ul> -->
+      </div>
+    </div>
+    </div>
+
 
 
     <!-- products -->
-  <div class="product" *ngFor="let product of products_arr">
+    <div class="product" *ngFor="let product of products_arr">
 
-    <div class="img_div">
-      <img src="{{ product.imgurl }}" alt="">
+      <div class="img_div">
+        <img src="{{ product.imgurl }}" alt="">
+      </div>
+
+      <div class='product_name_desc'>
+        <span class="product_title"> <h3>{{ product.name }}</h3></span>
+        <br>
+        <hr> {{ product.description }}
+      </div>
+
+      <div class="price">
+        <span class='font_price'> $ {{ product.price }}</span>
+        <br>
+        <button class='add_to_cart_btn' (click)="addToCart(product)">ADD TO CART</button>
+      </div>
+
     </div>
 
-    <div class='product_name_desc'>
-      <span class="product_title"> {{ product.name }}</span><br><hr>
-      {{ product.description }}
-    </div>
 
-    <div class="price">
-      <span class='font_price'>{{ product.price }}</span><br>
-      <button class='add_to_cart_btn' (click)="addToCart(product)">ADD TO CART</button>
-    </div>
+
 
   </div>
-
-
-
-
-</div>

@@ -8,16 +8,18 @@
     </div> -->
 
     <div class='product_name_desc'>
-      <span class="product_title"> {{ product.name }}</span><br><hr>
+      <span class="product_title"> {{ product.name }}</span><br>
     </div>
 
     <div class="price">
-      <span class='font_price'>{{ product.price }}</span><br>
+      <span class='font_price'> $ {{ product.price }}</span><br>
     </div>
 
     <div class="price">
-      <span class='font_price'>{{ product.qty}}</span><br>
+      <span class='font_price'>Qty: {{ product.qty}}</span><br>
     </div>
+
+    <hr>
 
 
   </div>
@@ -25,6 +27,8 @@
   <hr>
   <!-- <h5>TOTAL_SHOW: {{show_total}}</h5> -->
   <button>Buy Now</button>
+
+  
   <div class="helperPanda">
     <h4>Need Help?</h4>
   </div>

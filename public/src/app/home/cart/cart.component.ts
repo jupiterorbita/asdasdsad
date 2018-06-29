@@ -22,6 +22,7 @@ export class CartComponent implements OnInit {
       this._productService.cart.subscribe((cart) => {
       this.cart = cart;
       this.total = _productService.total;
+      this.total = Math.round(this.total * 100) / 100;
     }, (err) => {}, () => {});
   }
 

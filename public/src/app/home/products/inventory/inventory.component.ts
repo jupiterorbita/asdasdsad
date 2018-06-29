@@ -11,6 +11,8 @@ export class InventoryComponent implements OnInit {
 
   cart: any;
   products_arr = [];
+  values: string;
+  found: any;
 
   constructor(private _productService: ProductService) {
     this._productService.cart.subscribe( (cart) => {
@@ -64,5 +66,24 @@ export class InventoryComponent implements OnInit {
     this._productService.cart.next(this.cart);
   }
 
+
+  // ======== onKey event =============
+  onKey(event: any) {
+    console.log('====== event =>', event);
+    console.log('====== event.target =>', event.target);
+    console.log('====== event.target.value =>', event.target.value);
+    this.values += event.target.value;
+    this._productService.readSome(this.values).subscribe(
+      (server_response_arr) => {
+        console.log('server_response =>', server_response_arr);
+        this.found = server_response_arr['data'];
+        console.log('=-=-=-=-=-==--=-= this.found.name =>', this.found[0].name);
+      },
+      // (err) => {
+      //   console.log('onKey -> response -> err=>', err);
+      // }
+    );
+    this.values = '';
+  }
 
 }
